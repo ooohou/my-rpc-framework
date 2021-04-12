@@ -10,4 +10,29 @@ public class RpcRequest implements Serializable {
     String MethodName;
     //传入参数
     Object[] parameters;
+    public RpcRequest(){}
+    public RpcRequest builder(){
+        RpcRequest rpcRequest = new RpcRequest();
+        return rpcRequest;
+    }
+    public RpcRequest setInterface(String Interface){
+        this.Interface = Interface;
+        return this;
+    }
+    public RpcRequest setMethodName(String MethodName){
+        this.MethodName = MethodName;
+        return this;
+    }
+    public RpcRequest setParameters(Object[] parameters){
+        this.parameters = parameters;
+        return this;
+    }
+    public RpcRequest build(){
+        return new RpcRequest(this);
+    }
+    private RpcRequest(RpcRequest rpcRequest){
+        this.parameters = rpcRequest.parameters;
+        this.MethodName = rpcRequest.MethodName;
+        this.Interface = rpcRequest.Interface;
+    }
 }

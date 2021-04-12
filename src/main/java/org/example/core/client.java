@@ -8,8 +8,8 @@ import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-public class client {
-    public Object sendRpc(RpcRequest rpcRequest, String host, int port){
+public class Client {
+    public Object sendRpcRequest(RpcRequest rpcRequest, String host, int port){
         try {
             Socket socket = new Socket(host, port);
             //获取socket的输出流，用一个对象输出流包装，专门用于序列化
