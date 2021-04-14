@@ -1,6 +1,6 @@
 package org.example.client;
 
-import org.example.common.Hello;
+import org.example.pojo.Hello;
 import org.example.core.ClientProxy;
 import org.example.service.IHelloService;
 

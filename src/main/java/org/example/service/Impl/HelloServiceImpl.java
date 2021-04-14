@@ -1,11 +1,12 @@
-package org.example.service;
+package org.example.service.Impl;
 
-import org.example.common.Hello;
+import org.example.pojo.Hello;
+import org.example.service.IHelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class HelloService implements IHelloService {
-    private static final Logger logger = LoggerFactory.getLogger(HelloService.class);
+public class HelloServiceImpl implements IHelloService {
+    private static final Logger logger = LoggerFactory.getLogger(HelloServiceImpl.class);
     @Override
     public String sayHello(Hello hello) {
         logger.info("你好，我收到的hello信息如下：");

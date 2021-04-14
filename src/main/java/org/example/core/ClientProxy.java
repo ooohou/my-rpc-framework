@@ -1,6 +1,7 @@
 package org.example.core;
 
-import org.example.common.RpcRequest;
+import org.example.dto.RpcRequest;
+import org.example.dto.RpcResponse;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -36,6 +37,7 @@ public class ClientProxy implements InvocationHandler {
                 .paramTypes(method.getParameterTypes())
                 .build();
         Client client = new Client();
-        return client.sendRpcRequest(rpcRequest, host, port);
+        RpcResponse rpcResponse = (RpcResponse) client.sendRpcRequest(rpcRequest, host, port);
+        return rpcResponse.getData();
     }
 }
